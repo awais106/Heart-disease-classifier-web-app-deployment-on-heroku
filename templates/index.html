@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Heart Disease Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='heart-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+               <html>
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="age">Age</h3>
+  <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age" required>
+  </div>
+</body>
+</html>
+
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for='sex'>Sex</h3>
+					<select class="form-control" id="sex"  name="sex" required>
+						<option disabled selected value> -- Select an Option -- </option>
+						<option value = "0">Male</option>
+						<option value = "1">Female</option>
+					</select>       
+  </div>
+</body>
+</html>
+
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="cp">Chest Pain Type</h3>
+							<select class="form-control" id="cp" name = "cp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Typical Angina</option>
+							  <option value = "1">Atypical Angina</option>
+							  <option value = "2">Non-anginal Pain</option>
+							  <option value = "3">Asymptomatic</option>
+							</select>
+  </div>
+</body>
+</html>
+
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"> <h3 for="trestbps">Resting Blood Pressure in mm Hg  </h3>
+		<input type="number" class="form-control" id="trestbps" name="trestbps" placeholder="Blood Pressure eg. 120" required>
+  </div>
+</body>
+</html>
+
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="chol">Serum Cholestoral in mg/dl</h3>
+		<input type="number" class="form-control" id="chol" name="chol" placeholder="Chol Level eg.200 mg/dL" required>
+  </div>
+</body>
+</html>
+<head>
+  <title>In-line CSS Style</title>
+</head>
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="fbs">Fasting Blood Sugar > 120 mg/dl</h3>
+							<select class="form-control" id="fbs" name="fbs" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">False</option>
+							  <option value = "1">True</option>
+							</select>
+  </div>
+</body>
+</html>
+ 
+ <body>
+  <div style="color:purple; font-size:16px;"><h3 for="restecg">Resting ECG Results </h3>
+								<select class="form-control" id="restecg" name="restecg" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">Normal</option>
+								  <option value = "1">Having ST-T wave abnormality  </option>
+								  <option value = "2"> Probable or definite left ventricular hypertrophy  </option>
+								</select>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="thalach">Maximum Heart Rate</h3>
+		<input type="number" class="form-control" id="thalach" name="thalach" placeholder="Heart Rate eg. 200 bpm" required>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="exang">ST Depression Induced</h3>
+								<input type="number" step="any" class="form-control" id="exang" name="exang" placeholder="ST Depression(ECG) eg. 2 mm" required>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="exang">Exercise Induced Angina </h3>
+								<select class="form-control" id="oldpeak" name="oldpeak" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">No</option>
+								  <option value = "1">Yes</option>
+								</select>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="slope">Slope of the Peak Exercise ST Segment </h3>
+							<select class="form-control" id="slope" name="slope" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Upsloping</option>
+							  <option value = "1">Flat</option>
+							  <option value = "2">Downsloping</option>
+							</select>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="ca">Number of Vessels Colored by Flourosopy</h3>
+							  <select class="form-control" id="ca" name = "ca" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							  <option value = "2">2</option>
+							  <option value = "3">3</option>
+							</select>
+  </div>
+</body>
+</html>
+
+<body>
+  <div style="color:purple; font-size:16px;"><h3 for="thal">Thalassemia</h3>
+							<select class="form-control" id="thal" name = "thal" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "3">Normal</option>
+							  <option value = "6">Fixed defect</option>
+							  <option value = "7">Reversable defect</option>
+							</select>
+  </div>
+</body>
+</html>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/awais106"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/mohdawais106/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+		   <p class='footer-description'>A healthy and active life can always be beneficial to your heart.</p>
+           <p class='footer-description'>Made with ❤️ by MOHD AWAIS.</p>
+       </div>
+
+    </body>
+</html>
